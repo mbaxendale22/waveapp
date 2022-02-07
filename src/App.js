@@ -1,8 +1,16 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
+import checkIfWalletIsConnected from './lib/checkForWallet'
+import connectWallet from './lib/connectWallet'
 import './App.css'
 
 export default function App() {
+  const [currentAccount, setCurrentAccount] = useState('')
+
+  useEffect(() => {
+    checkIfWalletIsConnected(setCurrentAccount)
+  }, [])
+
   const wave = () => {}
 
   return (
@@ -19,6 +27,11 @@ export default function App() {
         <button className="waveButton" onClick={wave}>
           Wave at Me
         </button>
+        {!currentAccount && (
+          <button className="waveButton" onClick={connectWallet}>
+            Connect Wallet
+          </button>
+        )}
       </div>
     </div>
   )
