@@ -1,23 +1,19 @@
-import * as React from "react";
-import { ethers } from "ethers";
-import './App.css';
+import * as React from 'react'
+import { ethers } from 'ethers'
+import './App.css'
 
 export default function App() {
+  const wave = () => {}
 
-  const wave = () => {
-    
-  }
-  
   return (
     <div className="mainContainer">
-
       <div className="dataContainer">
-        <div className="header">
-        👋 Hey there!
-        </div>
+        <div className="header">👋 Hey there!</div>
 
         <div className="bio">
-        I am farza and I worked on self-driving cars so that's pretty cool right? Connect your Ethereum wallet and wave at me!
+          I am Matthew, I'm learning how to build and deploy smart contracts
+          using Solidity. Help me test my skills by connecting your Ethereum
+          wallet and giving me a wave!
         </div>
 
         <button className="waveButton" onClick={wave}>
@@ -25,5 +21,5 @@ export default function App() {
         </button>
       </div>
     </div>
-  );
+  )
 }
